@@ -10,9 +10,7 @@ $(document).ready(function() {
 		console.log(userInput);	
 		var getLink = "https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + accessToken;
 		console.log(getLink);
-		$.GET(getLink,
-			console.log("Success");
-		);
+	
 		xmlhttp.open("GET",getLink,true);
 
 	});
