@@ -12,13 +12,12 @@ $(document).ready(function() {
 
     function getImages(accessInput) {
         var apiURL = 'https://api.instagram.com/v1/tags/' + tag + '/media/recent?callback=?';
-        $.getJSON(apiURL, accessInput, function(data) {
-            console.log(data.data[0].images.standard_resolution.url);
+        $.getJSON(apiURL, accessInput, displayImages(data) 
         });
     }
 
-    function displayImages(dataPulled) {
-        $(".photos").append(data[0].images.standard_resolution.url);
+    function displayImages(data) {
+        $(".photos").html("<img src='" + data.data[0].images.standard_resolution.url + "'>";
     }
 
     getImages(access);
