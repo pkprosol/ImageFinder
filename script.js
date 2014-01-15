@@ -14,11 +14,11 @@ $(document).ready(function() {
         success: function(data) {
         	console.log(data);
         	console.log(typeof data);
-        	$(".photos").html(data);
-        	var photo1 = data[0].images.standard_resolution.url;
-        	window.open(photo1);
-    	}
+        	for (var i = 0; i < 10; i++) {
+				$(".photos").append("<img src='" + data.data[i].images.standard_resolution.url +"'></img></a>");
+    		}
 	});
+
 });
 
 
