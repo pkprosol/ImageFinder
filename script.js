@@ -38,9 +38,10 @@ $(document).ready(function() {
         $('.notices').html("");
         tag = $('#userTag').val();
         console.log("Tag: " + tag);
+        console.log("Typeof tag: " + typeof tag);
         counter = 0;
         if(tag === "") {
-            $('notices').html("You must enter a search term to get photos" + <br>);
+            $('.notices').html("You must enter a search term to get photos" + <br>);
         } else {
             getImages(access, tag, counter);     
         }
