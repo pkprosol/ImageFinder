@@ -40,7 +40,7 @@ $(document).ready(function() {
         console.log("Tag: " + tag);
         console.log("Typeof tag: " + typeof tag);
         counter = 0;
-        if(tag === null) {
+        if(tag === "") {
             $('.notices').html("You must enter a search term to get photos");
         } else {
             getImages(access, tag, counter);     
