@@ -16,10 +16,7 @@ $(document).ready(function() {
     }
 
     function displayImages(dataPulled) {
-        var images = instagram_data.data;
-        for (var i in photos) {
-            var image = photos[i];
-        }
+        $(".photos").append(data[0].images.standard_resolution.url);
     }
 
     getImages(access);
