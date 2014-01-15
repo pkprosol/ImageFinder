@@ -15,6 +15,7 @@ $(document).ready(function() {
         var apiURL = 'https://api.instagram.com/v1/tags/' + tagInput + '/media/recent?callback=?';
         $.getJSON(apiURL, accessInput, function(data) {
             console.log(data.data);
+            console.log(data.data === []);
           /*  if (data.data === undefined) {
                 $('.notices').html("Sorry, not an active tag, try again.");
                 console.log("Data undefined, should be error");
