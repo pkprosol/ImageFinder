@@ -5,7 +5,9 @@ $(document).ready(function() {
 	console.log(URLcode);
 	console.log("Hello");
 
-	$.ajax('https://api.instagram.com/oauth/access_token', {
+	$.ajax({
+		url: 'https://api.instagram.com/oauth/access_token',
+		data: 'json',
 		type: "POST",
 		client_id: "e4bd275464ca4eaeb2eefa4bd253f2b2",
 		client_secret: "5f80c997ad7f4230968d3c44c111f7e8",
