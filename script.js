@@ -8,10 +8,13 @@ $(document).ready(function() {
 	$("#searchButton").click(function() {
 		var userInput = $("#userTag").val();
 		console.log(userInput);	
-		console.log("https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + accessToken);
-		$.GET("https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + accessToken,
+		var getLink = "https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + accessToken;
+		console.log(getLink);
+		$.GET(getLink,
 			console.log("Success");
 		);
+		xmlhttp.open("GET",getLink,true);
+
 	});
 
 });
