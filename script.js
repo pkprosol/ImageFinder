@@ -22,6 +22,10 @@ $(document).ready(function() {
         getImages(access, tag);
     });
 
+    $('photos').click(function() {
+        getImages(access, tag);
+    });
+
 });
 
 
