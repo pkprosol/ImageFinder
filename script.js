@@ -14,7 +14,7 @@ $(document).ready(function() {
         console.log(tagInput);
         var apiURL = 'https://api.instagram.com/v1/tags/' + tagInput + '/media/recent?callback=?';
         $.getJSON(apiURL, accessInput, function(data) {
-            if (result === undefined) {
+            if (data === undefined) {
                 $('.notices').html("Sorry, not an active tag, try again.");
             } else {
                 var result = data.data[clickcount].images.standard_resolution.url; 
