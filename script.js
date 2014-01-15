@@ -3,7 +3,7 @@ $(document).ready(function() {
     var pathArray = currentURL.split('access_token=');
     var accessToken = pathArray[1];
     console.log("Access Token: " + accessToken);
-    if(accessToken.length > 0) {
+    if(accessToken !== undefined) {
         $('#login').hide();
     }
     var getURL = "https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + accessToken;
@@ -14,11 +14,13 @@ $(document).ready(function() {
         console.log(tagInput);
         var apiURL = 'https://api.instagram.com/v1/tags/' + tagInput + '/media/recent?callback=?';
         $.getJSON(apiURL, accessInput, function(data) {
+            console.log("Typeof data: " + typeof data);
             if (data === undefined) {
                 $('.notices').html("Sorry, not an active tag, try again.");
+                console.log("Data undefined, should be error");
             } else {
                 var result = data.data[clickcount].images.standard_resolution.url; 
-                console.log(result);
+                console.log("Data defined. Result is: " + result);
                 $('.photos').html("<img src='" + result + "' height='400' width='400'>");
             }
         });
