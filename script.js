@@ -2,7 +2,7 @@ $(document).ready(function() {
 	var currentURL = document.URL;
 	var pathArray = currentURL.split('access_token=');
 	var accessToken = pathArray[1];
-	console.log("Access Token" + accessToken);
+	console.log("Access Token: " + accessToken);
 
 	var getURL = "https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + accessToken;
 
@@ -15,6 +15,8 @@ $(document).ready(function() {
         	console.log(data);
         	console.log(typeof data);
         	$(".photos").html(data);
+        	var photo1 = data[0].images.standard_resolution.url;
+        	window.open(photo1);
     	}
 	});
 });
