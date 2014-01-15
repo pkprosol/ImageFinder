@@ -10,6 +10,7 @@ $(document).ready(function() {
     var access = {access_token:accessToken};
     
     function getImages(accessInput, tagInput, clickcount) {
+        console.log("Round: " + clickcount + 1);
         console.log(accessInput);
         console.log(tagInput);
         var apiURL = 'https://api.instagram.com/v1/tags/' + tagInput + '/media/recent?callback=?';
