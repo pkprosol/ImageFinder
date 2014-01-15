@@ -1,12 +1,18 @@
 $(document).ready(function() {
-	var currentURL = document.URL;
-	var pathArray = currentURL.split('access_token=');
-	var accessToken = pathArray[1];
-	console.log("Access Token: " + accessToken);
-
-	var getURL = "https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + accessToken;
-    var access = {access_token:accessToken};
-
+	$('#login').click(function() {
+        var currentURL = document.URL;
+        var pathArray = currentURL.split('access_token=');
+        var accessToken = pathArray[1];
+        console.log("Access Token: " + accessToken);
+        if(accessToken === undefined) {
+            $('.notices').html("Unfortunately you must log in to use this app");
+        } else {
+            $('#login').hide();
+            var getURL = "https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + accessToken;
+            var access = {access_token:accessToken};
+        }
+    });
+    
     function getImages(accessInput, tagInput, clickcount) {
         console.log(accessInput);
         console.log(tagInput);
