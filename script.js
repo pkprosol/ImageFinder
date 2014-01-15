@@ -3,6 +3,7 @@ $(document).ready(function() {
 	var pathArray = currentURL.split('?code=');
 	var code = pathArray[1];
 	console.log(code);
+	console.log("Hello");
 
 	$("#searchButton").click(function() {
 		var userInput = $("#userTag").val();
