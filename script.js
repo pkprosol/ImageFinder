@@ -17,13 +17,13 @@ $(document).ready(function() {
             if (result === undefined) {
                 $('.notices').html("Sorry, not an active tag, try again.");
             } else {
-                $(".photos").html("<img src='" + result + "' height='400' width='400'>");
+                $('.photos').html("<img src='" + result + "' height='400' width='400'>");
             }
         });
     }
 
     $('#searchButton').click(function() {
-        $(".notices").html("");
+        $('.notices').html("");
         var tag = $('#userTag').val();
         console.log("Tag: " + tag);
         var counter = 0;
@@ -32,7 +32,7 @@ $(document).ready(function() {
         $('.photos').click(function() {
             counter = counter + 1;
             if (counter > 20) {
-                $(".notices").html("Sorry, please pick a new key word");
+                $('.notices').html("Sorry, please pick a new key word");
             } else {
                 console.log(counter);
                 getImages(access, tag, counter);
