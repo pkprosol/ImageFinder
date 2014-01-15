@@ -8,7 +8,10 @@ $(document).ready(function() {
 
     var access = {access_token:accessToken};
 
-    var tag = "snow"; // Get user input
+    $('#searchButton').click(function() {
+        var tag = $('#userTag').val();
+        console.log("Tag: " + tag);
+    });
 
     function getImages(accessInput) {
         var apiURL = 'https://api.instagram.com/v1/tags/' + tag + '/media/recent?callback=?';
