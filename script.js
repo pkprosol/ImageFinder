@@ -14,7 +14,7 @@ $(document).ready(function() {
 			client_secret: "5f80c997ad7f4230968d3c44c111f7e8",
 			grant_type: "authorization_code",
 			redirect_uri: "http://pkprosol.github.io/ImageFinder/",
-			code = authCode
+			code: authCode
 		});
 
 	console.log(posting);
@@ -24,7 +24,7 @@ $(document).ready(function() {
 		console.log(userInput);	
 		var getLink = "https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + code;
 		console.log(getLink);
-	
+		
 		$.get(getLink, function( json ) {
   			console.log(json);
   			console.log("Success")
