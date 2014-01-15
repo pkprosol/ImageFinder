@@ -21,6 +21,7 @@ $(document).ready(function() {
 
     getImages(access);
 
+    console.log("Hurry up github!");
 });
 
 
