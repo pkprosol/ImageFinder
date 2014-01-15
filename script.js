@@ -8,6 +8,8 @@ $(document).ready(function() {
     var access = {access_token:accessToken};
 
     function getImages(accessInput, tagInput) {
+        console.log(accessInput);
+        console.log(tagInput);
         var apiURL = 'https://api.instagram.com/v1/tags/' + tagInput + '/media/recent?callback=?';
         $.getJSON(apiURL, accessInput, function(data) {
             console.log(data.data[0].images.standard_resolution.url);
