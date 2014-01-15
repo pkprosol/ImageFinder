@@ -12,12 +12,18 @@ $(document).ready(function() {
         console.log(tagInput);
         var apiURL = 'https://api.instagram.com/v1/tags/' + tagInput + '/media/recent?callback=?';
         $.getJSON(apiURL, accessInput, function(data) {
-            console.log(data.data[clickcount].images.standard_resolution.url);
-            $(".photos").html("<img src='" + data.data[clickcount].images.standard_resolution.url + "' height='400' width='400'>");
+            var result = data.data[clickcount].images.standard_resolution.url; 
+            console.log(result);
+            if (result = 'undefined') {
+                $('.notices').html("Sorry, not an active tag, try again.");
+            } else {
+                $(".photos").html("<img src='" + result + "' height='400' width='400'>");
+            }
         });
     }
 
     $('#searchButton').click(function() {
+        $(".notices").html("");
         var tag = $('#userTag').val();
         console.log("Tag: " + tag);
         var counter = 0;
@@ -25,8 +31,12 @@ $(document).ready(function() {
 
         $('.photos').click(function() {
             counter = counter + 1;
-            console.log(counter);
-            getImages(access, tag, counter);
+            if (counter > 20) {
+                $(".notices").html("Sorry, please pick a new key word");
+            } else {
+                console.log(counter);
+                getImages(access, tag, counter);
+            }
         });    
     });
 
