@@ -13,6 +13,7 @@ $(document).ready(function() {
         url: getURL,
         success: function(data) {
         	console.log(data);
+        	console.log(typeof data);
         	$(".photos").html(data);
     	}
 	});
