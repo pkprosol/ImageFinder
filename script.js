@@ -29,6 +29,7 @@ $(document).ready(function() {
     }
 
     $('#searchButton').click(function() {
+        console.log("searchButton was clicked");
         $('.notices').html("");
         var tag = $('#userTag').val();
         console.log("Tag: " + tag);
@@ -37,6 +38,7 @@ $(document).ready(function() {
     });
 
     $('.photos').click(function() {
+        console.log(".photos was clicked");
         counter = counter + 1;
         console.log("Counter in .photos.click(): " + counter);
         if (counter > 19) {
