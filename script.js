@@ -47,7 +47,7 @@ $(document).ready(function() {
         counter = counter + 1;
         console.log("Counter in .photos.click(): " + counter);
         if (counter > 19) {
-            $('.notices').html("Sorry, please pick a new key word");
+            $('.notices').html("Sorry, please pick a new key word/n");
         } else {
             getImages(access, tag, counter);
         }
