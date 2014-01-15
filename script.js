@@ -19,9 +19,8 @@ $(document).ready(function() {
 
 	console.log(posting);
 		
-	});
-
 });
+
 
 
 
