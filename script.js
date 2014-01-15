@@ -13,6 +13,7 @@ $(document).ready(function() {
         url: getURL,
         success: function(data) {
         	console.log(data);
+        	$(".photos").html(data);
     	}
 	});
 });
