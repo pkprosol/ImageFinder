@@ -10,6 +10,7 @@ $(document).ready(function() {
     var access = {access_token:accessToken};
     
     function getImages(accessInput, tagInput, clickcount) {
+        console.log("GetImages ran)");
         console.log("Round: " + clickcount);
         console.log("AccessInput: " + accessInput);
         console.log("Tag: " + tagInput);
@@ -25,28 +26,32 @@ $(document).ready(function() {
                 console.log("Data defined. Result is: " + result);
                 $('.photos').html("<img src='" + result + "' height='400' width='400'>");
             } 
+            console.log("If statement ran");
         });
     }
+
+    var counter = 0;
+    var tag = [];
 
     $('#searchButton').click(function() {
         console.log("searchButton was clicked");
         $('.notices').html("");
-        var tag = $('#userTag').val();
+        tag = $('#userTag').val();
         console.log("Tag: " + tag);
-        var counter = 0;
-        getImages(access, tag, counter);
-
-        $('.photos').click(function() {
-            console.log(".photos was clicked");
-            counter = counter + 1;
-            console.log("Counter in .photos.click(): " + counter);
-            if (counter > 19) {
-                $('.notices').html("Sorry, please pick a new key word");
-            } else {
-                getImages(access, tag, counter);
-            }
-        });        
+        counter = 0;
+        getImages(access, tag, counter); 
     });
+
+    $('.photos').click(function() {
+        console.log(".photos was clicked");
+        counter = counter + 1;
+        console.log("Counter in .photos.click(): " + counter);
+        if (counter > 19) {
+            $('.notices').html("Sorry, please pick a new key word");
+        } else {
+            getImages(access, tag, counter);
+        }
+    });       
 
 });
 
