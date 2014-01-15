@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("#searchButton").onclick(function() {
+	$("#searchButton").click(function() {
 		var userInput = $("#userTag").val();
 		console.log(userInput);
 	});
