@@ -18,18 +18,6 @@ $(document).ready(function() {
 		});
 
 	console.log(posting);
-
-	$("#searchButton").click(function() {
-		var userInput = $("#userTag").val();
-		console.log(userInput);	
-		var getLink = "https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + code;
-		console.log(getLink);
-		
-		$.get(getLink, function( json ) {
-  			console.log(json);
-  			console.log("Success")
-		});
-
 		
 	});
 
