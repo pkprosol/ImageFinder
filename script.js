@@ -10,7 +10,7 @@ $(document).ready(function() {
     var access = {access_token:accessToken};
     
     function getImages(accessInput, tagInput, clickcount) {
-        console.log("GetImages ran)");
+        console.log("GetImages ran");
         console.log("Round: " + clickcount);
         console.log("AccessInput: " + accessInput);
         console.log("Tag: " + tagInput);
