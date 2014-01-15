@@ -6,7 +6,7 @@ $(document).ready(function() {
 	console.log("Hello");
 
 	$("#searchButton").click(function() {
-		$.POST("https://api.instagram.com/oauth/access_token",
+		console.log($.POST("https://api.instagram.com/oauth/access_token",
 			{
 				client_id: "e4bd275464ca4eaeb2eefa4bd253f2b2",
 				client_secret: "5f80c997ad7f4230968d3c44c111f7e8",
@@ -15,6 +15,7 @@ $(document).ready(function() {
 				code: URLcode 
 			},
 			console.log("Success")
+  		);
   		);
 		var userInput = $("#userTag").val();
 		console.log(userInput);	
