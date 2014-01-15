@@ -11,12 +11,12 @@ $(document).ready(function() {
 		var getLink = "https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + accessToken;
 		console.log(getLink);
 	
-	$.getJSON(getLink, function(json) {
-            console.log(json);
-    });		
+		$.get(getLink, function( json ) {
+  			console.log(json);
+  			console.log("Success");
+		});
 
-	//	xmlhttp.open("GET",getLink,true);
-
+		
 	});
 
 });
