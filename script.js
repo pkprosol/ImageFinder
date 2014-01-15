@@ -33,7 +33,7 @@ $(document).ready(function() {
 
         $('.photos').click(function() {
             counter = counter + 1;
-            if (counter > 20) {
+            if (counter > 19) {
                 $('.notices').html("Sorry, please pick a new key word");
             } else {
                 console.log(counter);
