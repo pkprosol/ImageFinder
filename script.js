@@ -22,7 +22,7 @@ $(document).ready(function() {
         getImages(access, tag);
     });
 
-    $('photos').click(function() {
+    $('.photos').click(function() {
         getImages(access, tag);
     });
 
