@@ -14,7 +14,7 @@ $(document).ready(function() {
         $.getJSON(apiURL, accessInput, function(data) {
             var result = data.data[clickcount].images.standard_resolution.url; 
             console.log(result);
-            if (result == 'undefined') {
+            if (result === undefined) {
                 $('.notices').html("Sorry, not an active tag, try again.");
             } else {
                 $(".photos").html("<img src='" + result + "' height='400' width='400'>");
