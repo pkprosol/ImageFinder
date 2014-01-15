@@ -11,7 +11,7 @@ $(document).ready(function() {
     var tag = "snow"; // Get user input
 
     function getImages(accessInput) {
-        var apiUrl = 'https://api.instagram.com/v1/tags/' + tag + '/media/recent?callback=?';
+        var apiURL = 'https://api.instagram.com/v1/tags/' + tag + '/media/recent?callback=?';
         $.getJSON(apiURL, accessInput, displayImages);
     }
 
