@@ -13,7 +13,7 @@ $(document).ready(function() {
 	
 		$.get(getLink, function( json ) {
   			console.log(json);
-  			console.log("Success");
+  			console.log("Success")
 		});
 
 		
