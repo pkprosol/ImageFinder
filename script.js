@@ -7,24 +7,26 @@ $(document).ready(function() {
 	var getURL = "https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + accessToken;
     var access = {access_token:accessToken};
 
-    function getImages(accessInput, tagInput) {
+    function getImages(accessInput, tagInput, clickcount) {
         console.log(accessInput);
         console.log(tagInput);
         var apiURL = 'https://api.instagram.com/v1/tags/' + tagInput + '/media/recent?callback=?';
         $.getJSON(apiURL, accessInput, function(data) {
-            console.log(data.data[0].images.standard_resolution.url);
-            $(".photos").html("<img src='" + data.data[0].images.standard_resolution.url + "' height='400' width='400'>");
+            console.log(data.data[clickcount].images.standard_resolution.url);
+            $(".photos").html("<img src='" + data.data[clickcount].images.standard_resolution.url + "' height='400' width='400'>");
         });
     }
 
     $('#searchButton').click(function() {
         var tag = $('#userTag').val();
         console.log("Tag: " + tag);
-
-        getImages(access, tag);
+        var counter = 0;
+        getImages(access, tag, counter);
 
         $('.photos').click(function() {
-            getImages(access, tag);
+            counter = counter + 1;
+            console.log(counter);
+            getImages(access, tag, counter);
         });    
     });
 
