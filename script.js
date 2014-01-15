@@ -12,8 +12,7 @@ $(document).ready(function() {
 
     function getImages(accessInput) {
         var apiURL = 'https://api.instagram.com/v1/tags/' + tag + '/media/recent?callback=?';
-        $.getJSON(apiURL, accessInput, displayImages(data) 
-        });
+        $.getJSON(apiURL, accessInput, displayImages(data)); 
     }
 
     function displayImages(data) {
