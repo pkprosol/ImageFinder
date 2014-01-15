@@ -16,12 +16,13 @@ $(document).ready(function() {
     }
 
     function displayImages(data) {
-        $(".photos").html("<img src='" + data.data[0].images.standard_resolution.url + "'>";
+        $(".photos").html("<img src='" + data.data[0].images.standard_resolution.url + "'>");
     }
 
     getImages(access);
 
     console.log("Hurry up github!");
+    console.log("Bunnies");
 });
 
 
