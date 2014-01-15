@@ -5,7 +5,7 @@ $(document).ready(function() {
 	console.log(authCode);
 	console.log("Hello");
 
-	var postLink = "https://api.instagram.com/oauth/access_token" + authCode;
+	var postLink = "https://api.instagram.com/oauth/access_token=" + authCode;
 	console.log(postLink);
 
 	var posting = $.post(postLink, 
