@@ -16,6 +16,7 @@ $(document).ready(function() {
         $.getJSON(apiURL, accessInput, function(data) {
             console.log(data.data);
             console.log(data.data === []);
+            console.log("isEmptyObject: " + jQuery.isEmptyObject(data.data));
           /*  if (data.data === undefined) {
                 $('.notices').html("Sorry, not an active tag, try again.");
                 console.log("Data undefined, should be error");
