@@ -11,7 +11,11 @@ $(document).ready(function() {
 		var getLink = "https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + accessToken;
 		console.log(getLink);
 	
-		xmlhttp.open("GET",getLink,true);
+	$.getJSON(getLink, function(json) {
+            console.log(json);
+    });		
+
+	//	xmlhttp.open("GET",getLink,true);
 
 	});
 
