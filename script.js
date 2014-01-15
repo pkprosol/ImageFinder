@@ -10,13 +10,13 @@ $(document).ready(function() {
     var access = {access_token:accessToken};
     
     function getImages(accessInput, tagInput, clickcount) {
-        console.log("Round: " + clickcount + 1);
-        console.log(accessInput);
-        console.log(tagInput);
+        console.log("Round: " + clickcount);
+        console.log("AccessInput: " + accessInput);
+        console.log("Tag: " + tagInput);
         var apiURL = 'https://api.instagram.com/v1/tags/' + tagInput + '/media/recent?callback=?';
         $.getJSON(apiURL, accessInput, function(data) {
-            console.log(data.data);
-            console.log("isEmptyObject: " + jQuery.isEmptyObject(data.data));
+            console.log("Data.data: " + data.data);
+            console.log("isEmptyObject(data.data): " + jQuery.isEmptyObject(data.data));
             if (jQuery.isEmptyObject(data.data)) {
                 $('.notices').html("Sorry, not an active tag, try again.");
                 console.log("Data undefined, should be error");
@@ -40,7 +40,6 @@ $(document).ready(function() {
             if (counter > 19) {
                 $('.notices').html("Sorry, please pick a new key word");
             } else {
-                console.log(counter);
                 getImages(access, tag, counter);
             }
         });    
