@@ -13,7 +13,7 @@ $(document).ready(function() {
 			redirect_uri: "http://pkprosol.github.io/ImageFinder/",
 			code: URLcode 
 		},
-		console.log("Success");
+		console.log("Success")
   	});
 
 	$("#searchButton").click(function() {
