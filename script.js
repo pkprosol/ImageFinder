@@ -5,7 +5,6 @@ $(document).ready(function() {
 	console.log("Access Token: " + accessToken);
 
 	var getURL = "https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + accessToken;
-
     var access = {access_token:accessToken};
 
     $('#searchButton').click(function() {
