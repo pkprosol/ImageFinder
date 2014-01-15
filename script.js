@@ -22,10 +22,10 @@ $(document).ready(function() {
         console.log("Tag: " + tag);
 
         getImages(access, tag);
-    });
 
-    $('.photos').click(function() {
-        getImages(access, tag);
+        $('.photos').click(function() {
+            getImages(access, tag);
+        });    
     });
 
 });
