@@ -15,11 +15,11 @@ $(document).ready(function() {
         var apiURL = 'https://api.instagram.com/v1/tags/' + tagInput + '/media/recent?callback=?';
         $.getJSON(apiURL, accessInput, function(data) {
             console.log("Typeof data: " + typeof data);
-            if (data === undefined) {
+            var result = data.data[clickcount].images.standard_resolution.url; 
+            if (result === undefined) {
                 $('.notices').html("Sorry, not an active tag, try again.");
                 console.log("Data undefined, should be error");
             } else {
-                var result = data.data[clickcount].images.standard_resolution.url; 
                 console.log("Data defined. Result is: " + result);
                 $('.photos').html("<img src='" + result + "' height='400' width='400'>");
             }
