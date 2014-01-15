@@ -39,7 +39,11 @@ $(document).ready(function() {
         tag = $('#userTag').val();
         console.log("Tag: " + tag);
         counter = 0;
-        getImages(access, tag, counter); 
+        if(tag = "") {
+            $('notices').html("You must enter a search term to get photos" + <br>);
+        } else {
+            getImages(access, tag, counter);     
+        }
     });
 
     $('.photos').click(function() {
