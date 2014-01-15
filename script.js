@@ -3,7 +3,7 @@ $(document).ready(function() {
     var pathArray = currentURL.split('access_token=');
     var accessToken = pathArray[1];
     console.log("Access Token: " + accessToken);
-    if(accessToken !== undefined) {
+    if(accessToken.length > 0) {
         $('#login').hide();
     }
     var getURL = "https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + accessToken;
