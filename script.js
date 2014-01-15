@@ -3,13 +3,11 @@ $(document).ready(function() {
     var pathArray = currentURL.split('access_token=');
     var accessToken = pathArray[1];
     console.log("Access Token: " + accessToken);
-    if(accessToken === undefined) {
-        $('.notices').html("Unfortunately you must log in to use this app");
-    } else {
+    if(accessToken !== undefined) {
         $('#login').hide();
-        var getURL = "https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + accessToken;
-        var access = {access_token:accessToken};
     }
+    var getURL = "https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + accessToken;
+    var access = {access_token:accessToken};
     
     function getImages(accessInput, tagInput, clickcount) {
         console.log(accessInput);
