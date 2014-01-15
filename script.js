@@ -15,8 +15,8 @@ $(document).ready(function() {
         	console.log(data);
         	console.log(typeof data);
         	for (var i = 0; i < 10; i++) {
-				$(".photos").append("<img src='" + data.data[i].images.standard_resolution.url +"'></img></a>");
-    		}
+				$(".photos").append("<img src='" + data.data[i].images.standard_resolution.url +"'></img>");
+    	}
 	});
 
 });
