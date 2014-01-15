@@ -6,18 +6,23 @@ $(document).ready(function() {
 
 	var getURL = "https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + accessToken;
 
-	$.ajax({
-        type: "GET",
-        dataType: "jsonp",
-        cache: false,
-        url: getURL,
-        success: function(data) {
-        	console.log(data);
-        	console.log(typeof data);
-        	for (var i = 0; i < 10; i++) {
-				$(".photos").append("<img src='" + data.data[i].images.standard_resolution.url +"'></img>");
-    	}
-	});
+    var access = {access_token:accessToken};
+
+    var tag = "snow"; // Get user input
+
+    function getImages(accessInput) {
+        var apiUrl = 'https://api.instagram.com/v1/tags/' + tag + '/media/recent?callback=?';
+        $.getJSON(apiURL, accessInput, displayImages);
+    }
+
+    function displayImages(dataPulled) {
+        var images = instagram_data.data;
+        for (var i in photos) {
+            var image = photos[i];
+        }
+    }
+
+    getImages(access);
 
 });
 
