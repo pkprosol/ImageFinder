@@ -53,10 +53,24 @@ table {
 
 body {
 	font-family: Helvetica,Arial,sans-serif;
-	background-color: #000080;
-	color: white;
+	background-color: white;
+	color: darkgrey;
 }
 
 h1 {
 	font-size: 2em;
+	text-align: center;
 }
+
+h1 h2 a {
+	padding-bottom: 15px;
+}
+
+a {
+	color: red;
+}
+
+div { 
+	width: 1000px;
+}
+
