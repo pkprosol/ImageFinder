@@ -10,31 +10,36 @@
 	</head>
 
 	<body>
-		<h1>Image Finder v1.0</h1>
+		<div id="wrapper">
 
-		<h2>
-			<a id="login" href="https://instagram.com/oauth/authorize/?client_id=e4bd275464ca4eaeb2eefa4bd253f2b2&redirect_uri=http://pkprosol.github.io/ImageFinder/&response_type=token">
-				First login with Instagram, please.
-			</a>
-		</h2>
+			<h1>Image Finder v1.0</h1>
 
-		<div>
-			<section>
-				<p>Enter a tag to see recent pictures on Instagram that match</p>
-				<p>Click the photos to flip through different ones in the group, or search new tags</p>
-			</section>
+			<h2>
+				<a id="login" href="https://instagram.com/oauth/authorize/?client_id=e4bd275464ca4eaeb2eefa4bd253f2b2&redirect_uri=http://pkprosol.github.io/ImageFinder/&response_type=token">
+					First login with Instagram, please.
+				</a>
+			</h2>
 
-			<section>
-				<input type="text" id="userTag"/>
-				<button type="button" id="searchButton">Search</button>
-			</section>
-			<br>
-			<section class="notices">
-			</section>	
-			<br>
-			<section class="photos">
-			</section>
+			<div>
+				<section>
+					<p>Enter a tag to see recent pictures on Instagram that match</p>
+					<p>Click the photos to flip through different ones in the group, or search new tags</p>
+				</section>
+
+				<section>
+					<input type="text" id="userTag"/>
+					<button type="button" id="searchButton">Search</button>
+				</section>
+				<br>
+				<section class="notices">
+				</section>	
+				<br>
+				<section class="photos">
+				</section>
+
+			</div>
 
 		</div>
+
 	</body>
 </html>
