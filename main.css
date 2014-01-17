@@ -63,16 +63,14 @@ h1 {
 	text-align: center;
 }
 
-h1 h2 a {
+h1, h2, a, div { 
 	padding-bottom: 15px;
+	width: 1000px;
+
 }
 
 a {
-	color: red;
-}
-
-h1 h2 div { 
-	width: 1000px;
+	color: darkblue;
 }
 
 #wrapper {
