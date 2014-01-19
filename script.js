@@ -33,7 +33,7 @@ $(document).ready(function() {
             } else {
                 var result = data.data[clickcount].images.standard_resolution.url;  // callback function; PHP success function would be involved; jQuery has success callback built in
                 console.log("Data defined. Result is: " + result);
-                $('.photos').html("<img src='" + result + "' height='400' width='400'>");
+                $('.photos').html("<img id='currentImage' src='" + result + "' height='400' width='400'>");
                 urlArray.push(result);
                 console.log("URL Array: " + urlArray);
             } 

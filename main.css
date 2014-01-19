@@ -92,8 +92,11 @@ a {
 	margin-right: 20px;
 }
 
-#userTag, #searchbutton, .notices, .photos, a {
+#userTag, #searchbutton, .notices, a {
 	margin-left: 20px;
 }
 
-
+.currentImage {
+	margin-left: auto;
+	margin-right: auto;
+}
