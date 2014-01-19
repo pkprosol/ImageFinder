@@ -34,7 +34,7 @@ $(document).ready(function() {
             } else {
                 var result = data.data[clickcount].images.standard_resolution.url;  // callback function; PHP success function would be involved; jQuery has success callback built in
                 if (urlArray.length === 0) {
-                    $('.photos').html("<img id='currentImage' src='" + resultURL + "' height='400' width='400'>");
+                    $('.photos').html("<img id='currentImage' src='" + result + "' height='400' width='400'>");
                 } else {
                     showNewPhoto(result);
                 }
