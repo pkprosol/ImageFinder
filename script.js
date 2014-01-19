@@ -26,7 +26,8 @@ $(document).ready(function() {
             console.log("Data.data: " + data.data);
             console.log("isEmptyObject(data.data): " + jQuery.isEmptyObject(data.data));
             if (jQuery.isEmptyObject(data.data)) {
-                $('.notices').html("Sorry, not an active tag, try again.");
+                var notTagError = "Sorry, not an active tag, try again." + <br>;
+                $('.notices').html(notTagError);
                 console.log("Data undefined, should be error");
             } else {
                 var result = data.data[clickcount].images.standard_resolution.url;  // callback function; PHP success function would be involved; jQuery has success callback built in
