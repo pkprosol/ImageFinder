@@ -93,7 +93,7 @@ $(document).ready(function() {
 
     $('.photos').click(function() {
         console.log(".photos was clicked");
-        nextPhoto();
+        getNextPhoto();
     });     
 
 });
