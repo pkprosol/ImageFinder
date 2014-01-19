@@ -52,9 +52,10 @@ $(document).ready(function() {
             if (urlArray[i] === resultURL) {
                 duplicateScore = ++duplicateScore;
             }
-            console.log("Duplicate Score: " + duplicateScore);
         }
         
+        console.log("Duplicate Score: " + duplicateScore);
+
         if (duplicateScore > 0) {
             getNextPhoto();
         } else {
