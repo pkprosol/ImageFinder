@@ -101,7 +101,7 @@ a {
 	margin-left: 20px;
 }
 
-.currentImage {
+#currentImage {
 	margin-left: auto;
 	margin-right: auto;
 }
