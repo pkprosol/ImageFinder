@@ -22,28 +22,25 @@ $(document).ready(function() {
            
         var linksProcessed = urlArray.length;
 
-        if (linksProcessed === 20) {
-            $('.notices').html("Sorry, please pick a new key word");
-        } else {
-            $.getJSON(apiURL, accessInput, function(data) { // I can name this response/ response.data; return is encapsulated; generic function
+        $.getJSON(apiURL, accessInput, function(data) { // I can name this response/ response.data; return is encapsulated; generic function
 
-                if (jQuery.isEmptyObject(data.data)) {
-                    $('.notices').html('Sorry, not an active tag, try again.');
+            if (jQuery.isEmptyObject(data.data)) {
+                $('.notices').html('Sorry, not an active tag, try again.');
 
+            } else {
+                if (jQuery.isEmptyObject(data.data[linksProcessed+1])) {
+                    $('.notices').html("Sorry, please pick a new key word");    
                 } else {
                     var result = data.data[linksProcessed+1].images.standard_resolution.url;  // callback function; PHP success function would be involved; jQuery has success callback built in
                     console.log("Result URL: " + result); 
-                           
+                       
                     showNewPhoto(result);
-                }  
-            });
-        }
+                }
+            }  
+        });
     }   
 
     function showNewPhoto(resultURL) {
-        
-        console.log("URL Array length: " + urlArray.length);
-        console.log("URL Array: " + urlArray);
 
         var duplicateScore = 0;
         
@@ -56,6 +53,8 @@ $(document).ready(function() {
         console.log("Duplicate Score: " + duplicateScore);
 
         urlArray.push(resultURL);
+        console.log("URL Array length: " + urlArray.length);
+        console.log("URL Array: " + urlArray);
         
         if (duplicateScore > 0) {
             getImages(access, tag);
