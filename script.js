@@ -33,6 +33,7 @@ $(document).ready(function() {
                 console.log("Data undefined, should be error");
             } else {
                 var result = data.data[clickcount].images.standard_resolution.url;  // callback function; PHP success function would be involved; jQuery has success callback built in
+                console.log("URL Array length: " + urlArray.length);
                 if (urlArray.length === 0) {
                     $('.photos').html("<img id='currentImage' src='" + result + "' height='400' width='400'>");
                 } else {
@@ -45,7 +46,7 @@ $(document).ready(function() {
     function showNewPhoto(resultURL) {
         console.log("Data defined. Result is: " + resultURL);
         
-        urlArray.push(resultURL);
+        urlArray.push("Current URL: " + resultURL);
         console.log("URL Array: " + urlArray);
 
         var duplicateScore = 0;
