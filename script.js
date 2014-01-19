@@ -23,6 +23,7 @@ $(document).ready(function() {
         console.log("AccessInput: " + accessInput);
         console.log("Tag: " + tagInput);
         var apiURL = 'https://api.instagram.com/v1/tags/' + tagInput + '/media/recent?callback=?'; // can say JSON request done; may populate
+       
         $.getJSON(apiURL, accessInput, function(data) { // I can name this response/ response.data; return is encapsulated; generic function
             console.log("Data.data: " + data.data);
             console.log("isEmptyObject(data.data): " + jQuery.isEmptyObject(data.data));
@@ -32,7 +33,11 @@ $(document).ready(function() {
                 console.log("Data undefined, should be error");
             } else {
                 var result = data.data[clickcount].images.standard_resolution.url;  // callback function; PHP success function would be involved; jQuery has success callback built in
-                showNewPhoto(result);
+                if (urlArray.length) === 0 {
+                    $('.photos').html("<img id='currentImage' src='" + resultURL + "' height='400' width='400'>");
+                } else {
+                    showNewPhoto(result);
+                }
             } 
         });
     }
@@ -76,6 +81,7 @@ $(document).ready(function() {
         console.log("Tag: " + tag);
         console.log("Typeof tag: " + typeof tag);
         counter = 0;
+        urlArray = [];
         if (accessToken === undefined) {
             $('.notices').html("You must log in first.");
         } else if (tag === "") {
