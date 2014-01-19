@@ -63,7 +63,11 @@ h1 {
 	text-align: center;
 }
 
-h1, h2, a, div { 
+div {
+	width: 600px;
+}
+
+h1, h2, a, p { 
 	padding-bottom: 15px;
 	width: 600px;
 
