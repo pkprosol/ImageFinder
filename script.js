@@ -32,28 +32,42 @@ $(document).ready(function() {
                 console.log("Data undefined, should be error");
             } else {
                 var result = data.data[clickcount].images.standard_resolution.url;  // callback function; PHP success function would be involved; jQuery has success callback built in
-                
-                console.log("URL Array: " + urlArray);
+                showNewPhoto(result);
             } 
         });
     }
 
-    function checkDuplicate(resultURL) {
+    function showNewPhoto(resultURL) {
         console.log("Data defined. Result is: " + resultURL);
+        
         urlArray.push(resultURL);
+        console.log("URL Array: " + urlArray);
+
         var duplicateScore = 0;
+        
         for (var x in urlArray) {
             if (urlArray[x] === resultURL) {
                 duplicateScore = ++duplicateScore;
             }
-            console.log(duplicateScore);
+            console.log("Duplicate Score: " + duplicateScore);
         }
+        
         if (duplicateScore > 0) {
-            nextPhoto();
+            getNextPhoto();
         } else {
             $('.photos').html("<img id='currentImage' src='" + resultURL + "' height='400' width='400'>");
         }
     }
+
+    function getNextPhoto () {
+        counter = counter + 1;
+        console.log("Counter in .photos.click(): " + counter);
+        if (counter > 19) {
+            $('.notices').html("Sorry, please pick a new key word");
+        } else {
+            getImages(access, tag, counter);
+        }
+    }  
 
     $('#searchButton').click(function() {
         console.log("searchButton was clicked");
@@ -75,16 +89,6 @@ $(document).ready(function() {
         console.log(".photos was clicked");
         nextPhoto();
     });     
-
-    function nextPhoto {
-        counter = counter + 1;
-        console.log("Counter in .photos.click(): " + counter);
-        if (counter > 19) {
-            $('.notices').html("Sorry, please pick a new key word");
-        } else {
-            getImages(access, tag, counter);
-        }
-    }  
 
 });
 
