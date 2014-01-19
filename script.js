@@ -4,7 +4,6 @@ $(document).ready(function() {
     var accessToken = pathArray[1];
     var getURL = "https://api.instagram.com/v1/tags/snow/media/recent?access_token=" + accessToken;
     var access = {access_token:accessToken};
-    var counter = 0;
     var tag = []; 
     var urlArray = [];
 
@@ -20,8 +19,10 @@ $(document).ready(function() {
     function getImages(accessInput, tagInput) {
 
         var apiURL = 'https://api.instagram.com/v1/tags/' + tagInput + '/media/recent?callback=?'; // can say JSON request done; may populate
-       
-        if (urlArray.length === 20) {
+           
+        var linksProcessed = urlArray.length;
+
+        if (linksProcessed === 20) {
             $('.notices').html("Sorry, please pick a new key word");
         } else {
             $.getJSON(apiURL, accessInput, function(data) { // I can name this response/ response.data; return is encapsulated; generic function
@@ -30,7 +31,7 @@ $(document).ready(function() {
                     $('.notices').html('Sorry, not an active tag, try again.');
 
                 } else {
-                    var result = data.data[clickcount].images.standard_resolution.url;  // callback function; PHP success function would be involved; jQuery has success callback built in
+                    var result = data.data[linksProcessed+1].images.standard_resolution.url;  // callback function; PHP success function would be involved; jQuery has success callback built in
                     console.log("Result URL: " + result); 
                            
                     showNewPhoto(result);
