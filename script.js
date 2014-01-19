@@ -34,10 +34,9 @@ $(document).ready(function() {
             } else {
                 var result = data.data[clickcount].images.standard_resolution.url;  // callback function; PHP success function would be involved; jQuery has success callback built in
                 console.log("Result URL: " + result); 
-                            
+                           
                 showNewPhoto(result);
-                }
-            } 
+            }  
         });
     }
 
