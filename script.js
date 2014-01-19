@@ -27,7 +27,7 @@ $(document).ready(function() {
             console.log("Data.data: " + data.data);
             console.log("isEmptyObject(data.data): " + jQuery.isEmptyObject(data.data));
             if (jQuery.isEmptyObject(data.data)) {
-                var notTagError = "Sorry, not an active tag, try again." + <br>;
+                var notTagError = 'Sorry, not an active tag, try again.<br>';
                 $('.notices').html(notTagError);
                 console.log("Data undefined, should be error");
             } else {
