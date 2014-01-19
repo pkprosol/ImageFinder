@@ -32,13 +32,27 @@ $(document).ready(function() {
                 console.log("Data undefined, should be error");
             } else {
                 var result = data.data[clickcount].images.standard_resolution.url;  // callback function; PHP success function would be involved; jQuery has success callback built in
-                console.log("Data defined. Result is: " + result);
-                $('.photos').html("<img id='currentImage' src='" + result + "' height='400' width='400'>");
-                urlArray.push(result);
+                
                 console.log("URL Array: " + urlArray);
             } 
-            console.log("If statement ran");
         });
+    }
+
+    function checkDuplicate(resultURL) {
+        console.log("Data defined. Result is: " + resultURL);
+        urlArray.push(resultURL);
+        var duplicateScore = 0;
+        for (var x in urlArray) {
+            if (urlArray[x] === resultURL) {
+                duplicateScore = ++duplicateScore;
+            }
+            console.log(duplicateScore);
+        }
+        if (duplicateScore > 0) {
+            nextPhoto();
+        } else {
+            $('.photos').html("<img id='currentImage' src='" + resultURL + "' height='400' width='400'>");
+        }
     }
 
     $('#searchButton').click(function() {
@@ -59,6 +73,10 @@ $(document).ready(function() {
 
     $('.photos').click(function() {
         console.log(".photos was clicked");
+        nextPhoto();
+    });     
+
+    function nextPhoto {
         counter = counter + 1;
         console.log("Counter in .photos.click(): " + counter);
         if (counter > 19) {
@@ -66,7 +84,7 @@ $(document).ready(function() {
         } else {
             getImages(access, tag, counter);
         }
-    });       
+    }  
 
 });
 
