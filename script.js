@@ -15,6 +15,7 @@ $(document).ready(function() {
 
 // wrap getjson in function; run recursion
 // indexof
+// pagination
 
     function getImages(accessInput, tagInput, clickcount) {
         console.log("GetImages ran");
@@ -34,7 +35,7 @@ $(document).ready(function() {
                 console.log("Data defined. Result is: " + result);
                 $('.photos').html("<img src='" + result + "' height='400' width='400'>");
                 urlArray.push(result);
-                console.log(urlArray);
+                console.log("URL Array: " + urlArray);
             } 
             console.log("If statement ran");
         });
@@ -47,8 +48,10 @@ $(document).ready(function() {
         console.log("Tag: " + tag);
         console.log("Typeof tag: " + typeof tag);
         counter = 0;
-        if(tag === "") {
-            $('.notices').html("You must enter a search term to get photos");
+        if (accessToken === undefined) {
+            $('.notices').html("You must log in first.");
+        } else if (tag === "") {
+            $('.notices').html("You must search a tag to get photos.");
         } else {
             getImages(access, tag, counter);     
         }
@@ -64,8 +67,6 @@ $(document).ready(function() {
             getImages(access, tag, counter);
         }
     });       
-
-    console.log("Push!!!");
 
 });
 
